@@ -4,6 +4,14 @@
     "type": "color",
     "value": "#00FF46"
   },
+  "matrixSpeed": {
+    "max": 200,
+    "min": 50,
+    "tick": 25,
+    "text": "Matrix Falling Speed",
+    "type": "slider",
+    "value": 50
+  },
   "rainbowSpeed": {
     "max": 100,
     "min": 0,
