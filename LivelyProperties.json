@@ -16,5 +16,24 @@
     "type": "checkbox",
     "value": false,
     "text": "Rainbow"
+  },
+  "characters": {
+   "text" : "Characters",
+   "type" : "textbox",
+   "value" : "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789゠"
+  },
+  "rainSpeed": {
+    "max": 100,
+    "min": 0,
+    "step": 1,
+    "text": "Rain Speed",
+    "type": "slider",
+    "help": "Control the speed of the raining characters",
+    "value": 75
+  },
+  "backgroundColor": {
+    "text": "Background Color",
+    "type": "color",
+    "value": "#000000"
   }
 }

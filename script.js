@@ -6,7 +6,13 @@ var root = {
     },
     rainbowSpeed: 0.5,
     rainbow: true,
-    matrixspeed: 50
+    characters: "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789゠",
+    rainSpeed: 75,
+    backgroundColor: {
+        r: 0,
+        g: 0,
+        b: 0
+    }
 };
 
 var c = document.getElementById("c");
@@ -19,10 +25,6 @@ var hue = -0.01;
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
-// the characters
-var konkani  = "゠アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789"
-// converting the string into an array of single characters
-var characters = konkani.split("");
 var font_size = 14;
 var columns = c.width/font_size;    // number of columns for the rain
 var gradient = ctx.createLinearGradient(0,10, 0,200);
@@ -35,20 +37,22 @@ for (var x = 0; x < columns; x++)
 
 // drawing the characters
 function draw() {
+    // converting the string into an array of single characters
+    var characters = root.characters.split("");
+
     // Get the BG color based on the current time i.e. rgb(hh, mm, ss)
     // translucent BG to show trail
-
-    ctx.fillStyle = "rgba(0,0,0, 0.05)";
+    ctx.fillStyle = "rgba(" + root.backgroundColor.r + ", " + root.backgroundColor.g + ", " + root.backgroundColor.b + ", 0.05)"; //ctx.fillStyle = "rgba(0,0,0, 0.05)";
     ctx.fillRect(0, 0, c.width, c.height);
 
-    ctx.fillStyle = "#BBB"; // grey text
+    ctx.fillStyle = "rgba(" + root.backgroundColor.r + ", " + root.backgroundColor.g + ", " + root.backgroundColor.b + ", 1)"; //ctx.fillStyle = "#BBB"; // grey text
     ctx.font = font_size + "px arial";
 
     // looping over drops
     for (var i = 0; i < drops.length; i++)
     {
         // background color
-        ctx.fillStyle = "rgba(10,10,10, 1)";
+        ctx.fillStyle = "rgba(" + root.backgroundColor.r + ", " + root.backgroundColor.g + ", " + root.backgroundColor.b + ", 0.05)"; //ctx.fillStyle = "rgba(10,10,10, 1)";
         ctx.fillRect(i * font_size, drops[i] * font_size,font_size,font_size);
         // a random chinese character to print
         var text = characters[Math.floor(Math.random() * characters.length)];
@@ -74,7 +78,7 @@ function draw() {
     }
 }
 
-setInterval(draw, root.matrixspeed);
+var main_loop = setInterval(draw, root.rainSpeed);
 
 
 function livelyPropertyListener(name, val)
@@ -89,6 +93,24 @@ function livelyPropertyListener(name, val)
     case "rainbowSpeed":
       root.rainbowSpeed = val/100;
       break;     
+    case "characters":
+      if (val == "") {
+        root.characters = " ";
+        break;
+      }
+      val = val.replace(/(\r\n|\n|\r|\s)/gm, "");
+      root.characters = val;
+      break;
+    case "rainSpeed":
+      clearInterval(main_loop);
+      max_interval = 200;
+      // Calculating the percentage given from the Lively UI slider and transforming it to a scalar
+      root.rainSpeed = ((100 - val) / 100) * max_interval;
+      main_loop = setInterval(draw, root.rainSpeed);
+      break;
+    case "backgroundColor":
+      root.backgroundColor = hexToRgb(val);
+      break;
   }
 }
 
