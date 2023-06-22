@@ -1,8 +1,8 @@
 {
-  "AppVersion": "2.0.0.0",
+  "AppVersion": "2.0.0",
   "Title": "Matrix Rain Customizable",
   "Thumbnail": "thumbnail.jpg",
-  "Preview": "preview2.gif",
+  "Preview": "preview.gif",
   "Desc": "Matrix like rain animation using HTML5 Canvas. Customizable",
   "Author": "parambirs / khuong / ThalesORP",
   "License": "",
