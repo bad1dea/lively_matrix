@@ -1,12 +1,12 @@
 {
-  "AppVersion": "1.0.0.0",
-  "Title": "Matrix Rain Customizable",
+  "AppVersion": "2.0.0.0",
+  "Title": "Matrix Rain",
   "Thumbnail": "thumbnail.jpg",
-  "Preview": "preview2.gif",
-  "Desc": "Matrix like rain animation using HTML5 Canvas. Customizable",
-  "Author": "parambirs / khuong",
+  "Preview": "preview.gif",
+  "Desc": "Customizable Matrix like rain animation using HTML5 Canvas.",
+  "Author": "parambirs / khuong / ThalesORP",
   "License": "",
-  "Contact": "original: https://github.com/parambirs/matrix - edited: khuong#8225",
+  "Contact": "https://github.com/thalesorp/lively_matrix",
   "Type": 1,
   "FileName": "index.html"
 }

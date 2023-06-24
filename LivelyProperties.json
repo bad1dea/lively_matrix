@@ -1,20 +1,49 @@
 {
-  "matrixColor": {
+  "characters": {
+    "text": "Characters",
+    "type": "textbox",
+    "value": "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789゠"
+  },
+  "fontColor": {
     "text": "Font Color",
     "type": "color",
     "value": "#00FF46"
   },
-  "rainbowSpeed": {
-    "max": 100,
-    "min": 0,
-    "tick": 25,
-    "text": "Rainbow Speed",
-    "type": "slider",
-    "value": 50
-  },
-  "rainBow": {
+  "rainbow": {
     "type": "checkbox",
     "value": false,
     "text": "Rainbow"
+  },
+  "rainbowSpeed": {
+    "max": 100,
+    "min": 0,
+    "step": 1,
+    "text": "Rainbow Speed",
+    "type": "slider",
+    "help": "Controls the speed at which the rainbow colors change",
+    "value": 50
+  },
+  "backgroundColor": {
+    "text": "Background Color",
+    "type": "color",
+    "value": "#000000"
+  },
+  "rainSpeed": {
+    "max": 100,
+    "min": 0,
+    "step": 1,
+    "text": "Rain Speed",
+    "type": "slider",
+    "help": "Control the speed of raining characters",
+    "value": 75
+  },
+  "trailLength": {
+    "max": 100,
+    "min": 0,
+    "step": 1,
+    "text": "Trail Length",
+    "type": "slider",
+    "help": "Control the length of the trail left by the character",
+    "value": 80
   }
 }
