@@ -5,6 +5,7 @@
 
 body {
     background: black;
+    overflow: hidden;
 }
 
 canvas {
