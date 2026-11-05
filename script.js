@@ -1,11 +1,11 @@
 var root = {
   wavecolor: {  
-    r: 125,
-    g: 52,
-    b: 253
+    r: 1,
+    g:100,
+    b: 1
     },
     rainbowSpeed: 0.5,
-    rainbow: true,
+    rainbow: false,
     matrixspeed: 50
 };
 
@@ -20,7 +20,7 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 // the characters
-var konkani  = "゠アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレワヰヱヲンヺ・ーヽヿ0123456789"
+var konkani  = "010101"
 // converting the string into an array of single characters
 var characters = konkani.split("");
 var font_size = 14;
